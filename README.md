@@ -28,7 +28,7 @@ Neste Documento iremos tratar de como deverá funciona a API do PlanejaSD
 - Status Code: 200
 - Corpo da Resposta (JSON): Texto da pergunta e suas respectivas opções.
 - Exemplo: 
-```json
+```
   question = {
     text: 'Lorem Ips'
     choices: [
@@ -63,7 +63,7 @@ Neste Documento iremos tratar de como deverá funciona a API do PlanejaSD
 - Status Code: 200
 - Corpo da Resposta (JSON): Texto informando sucesso a rota de sua próxima pergunta.
 - Exemplo: 
-```json
+```
   {
     next: 'www.domain.com/question/1'
   }
