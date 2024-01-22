@@ -54,7 +54,7 @@ Neste Documento iremos tratar de como deverá funciona a API do PlanejaSD
 
 **Corpo (Body):**
 - Devera ser enviado um objeto contendo o id do campo selecionado e se caso houver resposta ou justificativa também deverá ser enviado
-  ```json
+  ```
   {
     id: 1, 
     response: 'resposta'
