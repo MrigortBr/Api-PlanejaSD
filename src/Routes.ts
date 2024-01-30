@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { authenticate, authenticateByType } from './middlewares/authentication';
+import courses from './routes/CoursesRoutes';
 
 class GeneralRouter {
   public router: Router;
@@ -10,17 +11,7 @@ class GeneralRouter {
   }
 
   private async initializeRoutes() {
-    this.router.get(
-      '/authenticate',
-      authenticateByType,
-      (req: Request, res: Response) => {
-        res.send('Rota 1 do Outro Aplicativo');
-      },
-    );
-
-    this.router.get('/logged', authenticate, (req: Request, res: Response) => {
-      res.send('oi');
-    });
+    this.router.use('/', courses);
   }
 }
 

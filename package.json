@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "scripts": {
+    "dev": "nodemon ./src/index.ts"
+  },
   "author": "MrIgortbr",
   "license": "ISC",
   "devDependencies": {
