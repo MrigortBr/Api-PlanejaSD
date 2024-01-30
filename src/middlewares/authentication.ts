@@ -25,9 +25,10 @@ export async function authenticateByType(
 ) {
   const user = await getDataUser(req)
     .then((r) => {
+      console.log(r.typeId < 1);
       if (r.typeId < 1) {
         console.log('nao pode');
-        throw new Error('Sem permissão para acessar essa rota');
+        throw new Error('Sem permissão para acessar essa rota'); //Read
       }
       next();
     })

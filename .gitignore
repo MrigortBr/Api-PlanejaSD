@@ -1,1 +1,3 @@
-node_modules
+# Módulos e diretórios gerados pelo Node.js
+node_modules/
+dist/

@@ -1,7 +1,5 @@
-import knex from 'knex';
 import connection from '../database/connection';
 import { UsersRegisters, UsersRegistersType } from '../entities/UsersRegisters';
-import { rejects } from 'assert';
 
 export async function findUserByid(id: number): Promise<UsersRegisters> {
   return new Promise<UsersRegisters>(async (resolve, reject) => {

@@ -9,6 +9,13 @@ const config: Knex.Config = {
     password: 'root',
     database: 'dev',
   },
+  migrations: {
+    tableName: 'knex_migrations',
+    directory: './database/migrations',
+  },
+  seeds: {
+    directory,
+  },
 };
 
 export default config;
