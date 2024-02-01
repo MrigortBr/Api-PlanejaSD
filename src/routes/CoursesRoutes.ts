@@ -3,11 +3,10 @@ import {
   listAllCourses,
   listCoursesByID,
 } from '../controllers/coursesController';
-import { authenticate } from '../middlewares/authentication';
 
 const router: Router = express.Router();
 
-router.get('/courses', listAllCourses);
-router.get('/courses/:id', listCoursesByID);
+router.get('/', listAllCourses);
+router.get('/:id', listCoursesByID);
 
 export default router;

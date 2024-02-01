@@ -1,7 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { findUserByid } from '../repositories/UsersRegistersRepository';
-import { decodeJwt, getDataUser, getJwt } from '../services/requisitionService';
-import { UsersRegisters } from '../entities/UsersRegisters';
+import { getDataUser } from '../services/requisitionService';
 
 export async function authenticate(
   req: Request,
@@ -26,7 +24,7 @@ export async function authenticateByType(
   const user = await getDataUser(req)
     .then((r) => {
       console.log(r.typeId < 1);
-      if (r.typeId < 1) {
+      if (r.typeId <= 2) {
         console.log('nao pode');
         throw new Error('Sem permissão para acessar essa rota'); //Read
       }
