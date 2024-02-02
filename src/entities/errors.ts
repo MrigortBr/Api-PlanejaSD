@@ -33,6 +33,12 @@ const NoJustify: ErrorType = {
   internalCode: 'NoJustifyChoiceAvailable',
 };
 
+const UserNotFound: ErrorType = {
+  message: 'Usuario não existe',
+  code: 406,
+  internalCode: 'NoJustifyChoiceAvailable',
+};
+
 const NoChoices: ErrorType = {
   message: 'Sem escolhas disponiveis',
   code: 406,
@@ -51,6 +57,12 @@ const ParametersInvalid: ErrorType = {
   internalCode: 'NoQuestionsAvailable',
 };
 
+const NoPermission: ErrorType = {
+  message: 'Usuario sem permissão para isto',
+  code: 401,
+  internalCode: 'NoPermission',
+};
+
 export const errors = {
   NoCourses: NoCourses,
   NoCourse: NoCourse,
@@ -60,6 +72,8 @@ export const errors = {
   '3D000': NoDatabase,
   NoQuestions: NoQuestions,
   ParametersInvalid: ParametersInvalid,
+  UserNotFound: UserNotFound,
+  NoPermission: NoPermission,
 };
 
 export function buildErrorResponse(error: ErrorType): ErrorResponse {

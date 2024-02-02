@@ -40,8 +40,11 @@ export function buildResponseChoice(
 ): RequisitionChoicesResponseType {
   const newChoice: ChoiceResponseType = {
     choice: choice,
-    justifyChoice: `${process.env.DOMAIN}choice/${choice.JustifyChoice}/justifyChoice`,
   };
+
+  if (choice.JustifyChoice !== null) {
+    newChoice.justifyChoice = `${process.env.DOMAIN}choice/${choice.JustifyChoice}/justifyChoice`;
+  }
 
   const response: RequisitionChoicesResponseType = {
     code: 200,

@@ -52,8 +52,6 @@ export function listAllCoursesService(): Promise<RequisitionCoursesResponseType>
           resolve(result);
         })
         .catch((error) => {
-          console.log(error.message.search('"dev"'));
-
           if (error.message == '' || error.message.search('"dev"') > 0) {
             reject(errors[error.code]);
           }

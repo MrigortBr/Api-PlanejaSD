@@ -10,7 +10,7 @@ export type ChoiceType = {
 
 export type ChoiceResponseType = {
   choice: ChoiceType;
-  justifyChoice: string;
+  justifyChoice?: string;
   link?: string;
 };
 

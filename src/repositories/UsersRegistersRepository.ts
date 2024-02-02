@@ -9,7 +9,7 @@ export async function findUserByid(id: number): Promise<UsersRegisters> {
         .from('users__registers')
         .where({ id: id });
       if (result.length === 0) {
-        throw new Error('Usuário não encontrado');
+        throw new Error('UserNotFound');
       }
       const userFinded = new UsersRegisters(result[0]);
       resolve(userFinded);
