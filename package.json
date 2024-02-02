@@ -4,7 +4,12 @@
   "description": "",
   "keywords": [],
   "scripts": {
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "run": "nodemon ./build/index.js",
+    "build": "tsc",
+    "install:docker": "docker-compose up -d",
+    "install:node": "npm i",
+    "install:knex": "npx knex migrate:latest --knexfile=./src/knexfile.ts"
   },
   "author": "MrIgortbr",
   "license": "ISC",
