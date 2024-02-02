@@ -1,8 +1,8 @@
 import connection from '../database/connection';
 import { ChoiceType } from '../entities/Choice';
 
-export async function listById(idChoice: number): Promise<ChoiceType> {
-  return new Promise<ChoiceType>(async (resolve, reject) => {
+export async function listById(idChoice: number): Promise<ChoiceType[]> {
+  return new Promise<ChoiceType[]>(async (resolve, reject) => {
     try {
       const result: ChoiceType[] = await connection('choices as c')
         .select(
@@ -16,20 +16,12 @@ export async function listById(idChoice: number): Promise<ChoiceType> {
         .leftJoin(
           'choice_justify_choice as cjc',
           'cjc.id_question_choice',
-          'c.id',
+          'qc.id',
         )
         .where('qc.id', idChoice);
-
-      resolve(result[0]);
+      resolve(result);
     } catch (error) {
       reject(error);
     }
   });
 }
-
-// export type ChoiceType = {
-//   id: number;
-//   title: string;
-//   score: number;
-//   JustifyChoice: number | JustifyChoiceType;
-// };

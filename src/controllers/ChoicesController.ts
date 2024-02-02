@@ -1,15 +1,17 @@
 import { Request, Response } from 'express';
 import { listById } from '../repositories/ChoicesRepository';
+import { buildErrorResponse } from '../entities/errors';
+import { listChoiceByQuestionService } from '../services/ChoiceService';
 
-export async function listChoiceByIdQuestion_Choice(
-  req: Request,
-  res: Response,
-) {
-  const courseId: number = parseInt(req.params.id, 10);
-  listById(courseId)
+export async function listChoiceByQuestion(req: Request, res: Response) {
+  const choiceId: number = parseInt(req.params.id, 10);
+  listChoiceByQuestionService(choiceId)
     .then((response) => {
-      res.json(response);
-      res.send(200);
+      res.status(response.code);
+      res.json(response.choice);
     })
-    .catch((error) => {});
+    .catch((error) => {
+      res.status(error.code);
+      res.json(buildErrorResponse(error));
+    });
 }

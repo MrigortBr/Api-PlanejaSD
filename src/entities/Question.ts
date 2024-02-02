@@ -5,5 +5,16 @@ export type QuestionType = {
   name: string;
   title: string;
   text: string;
-  idChoice: number[] | ChoiceType[];
+  idchoice: number[] | ChoiceType[];
+};
+
+export type QuestionResponseType = {
+  question: QuestionType;
+  choices: string[];
+  link?: string;
+};
+
+export type RequisitionQuestionsResponseType = {
+  questions: QuestionResponseType[];
+  code: 200;
 };

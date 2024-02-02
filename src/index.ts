@@ -1,6 +1,8 @@
 import express, { Express } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+
 import GeneralRouter from './Routes';
 
 dotenv.config();
@@ -11,6 +13,7 @@ class app {
 
   constructor() {
     this.app = express();
+    this.enableBodyParser();
     this.enableCors();
     this.loadRoutes();
   }
@@ -23,6 +26,10 @@ class app {
   loadRoutes() {
     this.app.use('/', GeneralRouter);
     console.log('router read successfully');
+  }
+
+  enableBodyParser() {
+    this.app.use(express.json());
   }
 
   init() {

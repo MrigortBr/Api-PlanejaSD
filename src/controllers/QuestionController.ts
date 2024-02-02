@@ -1,12 +1,16 @@
 import { Request, Response } from 'express';
-import { listByCourse } from '../repositories/QuestionsRepository';
+import { listQuestionByCourse } from '../services/QuestionService';
+import { ErrorType, buildErrorResponse } from '../entities/errors';
 
 export async function listQuestionByIDCourse(req: Request, res: Response) {
   const courseId: number = parseInt(req.params.id, 10);
-  listByCourse(courseId)
+  await listQuestionByCourse(courseId)
     .then((response) => {
-      res.json(response);
-      res.send(200);
+      res.status(response.code);
+      res.json(response.questions);
     })
-    .catch((error) => {});
+    .catch((error: ErrorType) => {
+      res.status(error.code);
+      res.json(buildErrorResponse(error));
+    });
 }

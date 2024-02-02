@@ -12,14 +12,14 @@ export async function listAll(): Promise<CourseType[]> {
   });
 }
 
-export async function listById(id: number): Promise<CourseType> {
-  return new Promise<CourseType>(async (resolve, reject) => {
+export async function listById(id: number): Promise<CourseType[]> {
+  return new Promise<CourseType[]>(async (resolve, reject) => {
     try {
       const result: CourseType[] = await connection
         .select('*')
         .from('courses')
         .where({ id: id });
-      resolve(result[0]);
+      resolve(result);
     } catch (error) {
       reject(error);
     }

@@ -1,8 +1,8 @@
 import express, { Router } from 'express';
-import { listChoiceByIdQuestion_Choice } from '../controllers/ChoicesController';
+import { listChoiceByQuestion } from '../controllers/ChoicesController';
 
 const router: Router = express.Router();
 
-router.get('/:id/choices', listChoiceByIdQuestion_Choice);
+router.get('/:id/choices', listChoiceByQuestion);
 
 export default router;

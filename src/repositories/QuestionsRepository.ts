@@ -4,7 +4,7 @@ import { QuestionType } from '../entities/Question';
 export async function listByCourse(courseId: number): Promise<QuestionType[]> {
   return new Promise<QuestionType[]>(async (resolve, reject) => {
     try {
-      const result = await connection('courses_questions as cq')
+      const result: QuestionType[] = await connection('courses_questions as cq')
         .select('q.id', 'q.title', 'q.position', 'q.text')
         .select(connection.raw('ARRAY_AGG(qc.id) as idChoice'))
         .leftJoin('questions as q', 'q.id', 'cq.id_question')

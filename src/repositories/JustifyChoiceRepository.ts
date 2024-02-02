@@ -3,8 +3,8 @@ import { JustifyChoiceType } from '../entities/JustifyChoice';
 
 export async function listJustifyChoiceById(
   idJustifyChoice: number,
-): Promise<JustifyChoiceType> {
-  return new Promise<JustifyChoiceType>(async (resolve, reject) => {
+): Promise<JustifyChoiceType[]> {
+  return new Promise<JustifyChoiceType[]>(async (resolve, reject) => {
     try {
       const result: JustifyChoiceType[] = await connection(
         'justify_choice as jc',
@@ -16,9 +16,9 @@ export async function listJustifyChoiceById(
           'jc.score',
         )
         .join('choice_justify_choice as cjc', 'cjc.id_justify_choice', 'jc.id')
-        .where('cjc.id', 1);
+        .where('cjc.id', idJustifyChoice);
 
-      resolve(result[0]);
+      resolve(result);
     } catch (error) {
       reject(error);
     }
