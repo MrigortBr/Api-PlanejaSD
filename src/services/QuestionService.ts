@@ -4,7 +4,7 @@ import {
   RequisitionQuestionsResponseType,
 } from '../entities/Question';
 import { errors } from '../entities/errors';
-import { listByCourse } from '../repositories/QuestionsRepository';
+import { listAll, listByCourse } from '../repositories/QuestionsRepository';
 
 export async function listQuestionByCourse(
   courseId: number,
@@ -32,6 +32,7 @@ export async function listQuestionByCourse(
     },
   );
 }
+
 export function buildResponseQuestions(
   questions: QuestionType[],
 ): RequisitionQuestionsResponseType {

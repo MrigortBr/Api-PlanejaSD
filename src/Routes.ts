@@ -4,6 +4,7 @@ import questions from './routes/QuestionsRoutes';
 import choices from './routes/ChoicesRoutes';
 import JustifyChoice from './routes/JustifyChoiceRoutes';
 import Answer from './routes/AnswerRoutes';
+import Portable from './routes/PortableRoutes';
 
 class GeneralRouter {
   public router: Router;
@@ -19,6 +20,7 @@ class GeneralRouter {
     this.router.use('/question', choices);
     this.router.use('/choice', JustifyChoice);
     this.router.use('/answer', Answer);
+    this.router.use('/portable', Portable);
   }
 }
 

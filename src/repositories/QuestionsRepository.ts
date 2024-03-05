@@ -18,3 +18,14 @@ export async function listByCourse(courseId: number): Promise<QuestionType[]> {
     }
   });
 }
+
+export async function listAll(): Promise<QuestionType[]> {
+  return new Promise<QuestionType[]>(async (resolve, reject) => {
+    try {
+      const result: QuestionType[] = await connection('questions').select('*');
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
