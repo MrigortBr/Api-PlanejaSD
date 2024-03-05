@@ -1,0 +1,123 @@
+:root {
+  --red: #551b26;
+  --red2: #63000d;
+  --textOne: #ffffff;
+  --black: #000000;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+object {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track,
+body *::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb,
+body *::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 20px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5vw;
+  padding: 2.5vw;
+  box-sizing: border-box;
+}
+
+.course {
+  display: grid;
+  grid-template-rows: 60% 20% 20%;
+  width: 70%;
+  height: 60vh;
+  padding: 10px;
+  background-color: var(--red2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 500ms;
+  position: relative;
+}
+
+.course::after {
+  content: " ";
+  background-color: var(--red);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 20px;
+  transition: 500ms;
+  top: 0;
+  left: 0;
+}
+
+.course:hover::after {
+  left: 5%;
+  top: 5%;
+}
+
+.course img {
+  width: 100%;
+  margin: auto;
+  height: 90%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 57px -1px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 0px 0px 57px -1px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 0px 0px 57px -1px rgba(0, 0, 0, 0.66);
+}
+
+.course h1 {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.course button {
+  border-radius: 20px;
+  border: 0;
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.course button:hover,
+.course:hover button {
+  width: 70%;
+  font-size: 23px;
+}
+
+footer {
+  width: calc(100% + 4.4vw);
+  margin-left: -2.5vw;
+  background-color: transparent;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  height: 5vh;
+}

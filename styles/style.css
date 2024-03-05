@@ -1,0 +1,43 @@
+@import url(header.css);
+@import url(nav.css);
+
+:root {
+  --red: #551b26;
+  --red2: #63000d;
+  --red3: #ac0117;
+  --green: #026302;
+  --textOne: #ffffff;
+  --black: #000000;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  overflow-y: hidden;
+}
+
+object {
+  z-index: 1;
+  height: 80vh;
+  width: 100vw;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track,
+body *::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb,
+body *::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 20px;
+}

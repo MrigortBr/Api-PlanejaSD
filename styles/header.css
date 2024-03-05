@@ -1,0 +1,25 @@
+header {
+  width: 100vw;
+  max-width: 100vw;
+  height: 13vh;
+  display: flex;
+  background-image: url("../assets/headerBackrground.svg");
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
+}
+
+.logo > img {
+  height: 80%;
+}
+
+.logo h1 {
+  color: var(--textOne);
+  margin-left: 1vw;
+}

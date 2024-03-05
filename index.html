@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Logo.png" alt="" />
+        <h1>PlanejaSD - Gerenciamento</h1>
+      </div>
+    </header>
+    <nav id="nav">
+      <p
+        onmouseenter="changeOrder(1)"
+        onmouseleave="changeOrder(0)"
+        onclick="switchPage(1)"
+      >
+        Cursos
+      </p>
+      <p
+        onmouseenter="changeOrder(2)"
+        onmouseleave="changeOrder(0)"
+        onclick="switchPage(2)"
+      >
+        dados
+      </p>
+      <p
+        onmouseenter="changeOrder(3)"
+        onmouseleave="changeOrder(0)"
+        onclick="switchPage(3)"
+      >
+        sobre
+      </p>
+    </nav>
+    <object id="app" type="text/html" data="./pages/courses.html"></object>
+
+    <script src="./scripts/style.js"></script>
+    <script src="./scripts/loader.js"></script>
+  </body>
+</html>
