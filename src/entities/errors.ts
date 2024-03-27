@@ -67,6 +67,7 @@ export const errors = {
   NoCourses: NoCourses,
   NoCourse: NoCourse,
   NoChoices: NoChoices,
+  "Error: NoChoices": NoChoices,
   NoJustify: NoJustify,
   ECONNREFUSED: NoDatabase,
   '3D000': NoDatabase,
