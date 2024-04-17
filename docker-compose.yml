@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  meu_mysql:
+    image: postgres
+    container_name: dev
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: dev
+    ports:
+      - '5432:5432'
+    restart: always
