@@ -3,7 +3,7 @@ version: '3.8'
 services:
   meu_mysql:
     image: postgres
-    container_name: dev2
+    container_name: dev
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: dev
