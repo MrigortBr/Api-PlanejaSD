@@ -31,9 +31,7 @@ export async function authenticateByType(
     })
     .catch((error) => {
       let responseError: ErrorType = null;
-      if (error.message == undefined) {
-        responseError = errors[error.code];
-      }
+      responseError = errors[error.code];
 
       res.status(responseError.code);
       res.json(buildErrorResponse(responseError));

@@ -81,11 +81,7 @@ export const errors = {
   NoCourses: NoCourses,
   NoCourse: NoCourse,
   NoChoices: NoChoices,
-<<<<<<< HEAD
   'Error: NoChoices': NoChoices,
-=======
-  "Error: NoChoices": NoChoices,
->>>>>>> 843635518f3c85be7eb24c0fa4eb861ef7cdcb7d
   NoJustify: NoJustify,
   ECONNREFUSED: NoDatabase,
   '3D000': NoDatabase,
