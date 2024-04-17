@@ -17,7 +17,7 @@ export async function getDataUser(req: Request): Promise<UsersRegisters> {
   const keyJwt = getJwt(req);
 
   if (keyJwt === undefined) {
-    return Promise.reject(new Error('É necessario chave de autenticação'));
+    return Promise.reject({ code: 'NoKey' });
   }
 
   const decoded = decodeJwt(keyJwt);
@@ -25,7 +25,7 @@ export async function getDataUser(req: Request): Promise<UsersRegisters> {
     if (decoded.id === undefined) {
     }
   } catch (error) {
-    return Promise.reject(new Error('Chave de autencação invalida'));
+    return Promise.reject({ code: 'NoPermissionAuth' });
   }
 
   const id = decoded.id;

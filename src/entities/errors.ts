@@ -63,11 +63,29 @@ const NoPermission: ErrorType = {
   internalCode: 'NoPermission',
 };
 
+const NoPermissionAuth: ErrorType = {
+  message: 'Usuario sem permissão para autenticar',
+  code: 403,
+  internalCode: 'NoPermissionAuth',
+};
+
+const NoKey: ErrorType = {
+  message: 'É necessario chave de autenticação',
+  code: 403,
+  internalCode: 'NoKey',
+};
+
 export const errors = {
+  NoPermissionAuth: NoPermissionAuth,
+  NoKey: NoKey,
   NoCourses: NoCourses,
   NoCourse: NoCourse,
   NoChoices: NoChoices,
+<<<<<<< HEAD
+  'Error: NoChoices': NoChoices,
+=======
   "Error: NoChoices": NoChoices,
+>>>>>>> 843635518f3c85be7eb24c0fa4eb861ef7cdcb7d
   NoJustify: NoJustify,
   ECONNREFUSED: NoDatabase,
   '3D000': NoDatabase,

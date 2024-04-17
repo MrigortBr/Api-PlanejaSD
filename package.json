@@ -9,7 +9,8 @@
     "build": "tsc",
     "install:docker": "docker-compose up -d",
     "install:node": "npm i",
-    "install:knex": "npx knex migrate:latest --knexfile=./src/knexfile.ts"
+    "install:knex": "npx knex migrate:latest --knexfile=./src/knexfile.ts",
+    "install:seed": "npx knex seed:run --knexfile=./src/knexfile.ts"
   },
   "author": "MrIgortbr",
   "license": "ISC",

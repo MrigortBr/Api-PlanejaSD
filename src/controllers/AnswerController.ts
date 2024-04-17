@@ -15,4 +15,6 @@ export async function AnswerController(req: Request, res: Response) {
       res.status(error.code);
       res.json(buildErrorResponse(error));
     });
+
+  console.log('recebis');
 }

@@ -25,16 +25,15 @@ export async function authenticateByType(
   await getDataUser(req)
     .then((r) => {
       if (r.typeId > 2) {
-        throw new Error('NoPermission'); //Read
+        throw new Error('NoPermission');
       }
       next();
     })
     .catch((error) => {
       let responseError: ErrorType = null;
-      if (error.message == '') {
+      if (error.message == undefined) {
         responseError = errors[error.code];
       }
-      responseError = errors[error.message];
 
       res.status(responseError.code);
       res.json(buildErrorResponse(responseError));
